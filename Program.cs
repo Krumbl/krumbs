@@ -4,13 +4,22 @@ namespace krumbs
 {
     class Program
     {
+        int screenW = 3840;
+        int screenH = 1600;
 
         static void Main(string[] args)
         {
-            // 3840, 1600
-            int screenW = 3840;
-            int screenH = 1600;
+            new Program().launchBank();
+        }
 
+        public void launchBank() {
+            var krumbs = new Krumbs();
+            var process = krumbs.launch("WoW - Bank", "bank");
+            // krumbs.position(process, screenW / 4 * 3, screenH / 4 * 0, screenW / 4, screenH / 4);
+            krumbs.position(process, screenW - (1920 * 2/3), 0 , 1920 * 2/3, 1080 * 2/3);
+        }
+
+        public void launchBox() {
             // Console.WriteLine("Hello World!");
             // new Launch().launch();
             var krumbs = new Krumbs();
