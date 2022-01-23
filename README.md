@@ -1,1 +1,3 @@
 # krumbs
+
+dotnet run

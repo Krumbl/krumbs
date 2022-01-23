@@ -14,15 +14,15 @@ namespace krumbs
             // Console.WriteLine("Hello World!");
             // new Launch().launch();
             var krumbs = new Krumbs();
-            var process = krumbs.launch("WoW - 1");
-            krumbs.removeBorder(process);
+            var process = krumbs.launch("WoW - 1", "krumbs");
+            //krumbs.removeBorder(process);
             //krumbs.position(process, 0, 0, 1920, 1080);
             krumbs.position(process, 0, 0, screenW / 4 * 3, screenH);
 
             for (int i = 0; i < 4; i++) {
-                var potato= krumbs.launch($"WoW - {i+1}");
+                var potato= krumbs.launch($"WoW - {i+1}", $"krumbs{i+1}");
                 // border needs to be removed before position
-                krumbs.removeBorder(potato);
+                //krumbs.removeBorde r(potato);
                 krumbs.position(potato, screenW / 4 * 3, screenH / 4 * i, screenW / 4, screenH / 4);
             }
             // var potato1 = krumbs.launch("WoW - 2");

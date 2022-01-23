@@ -49,7 +49,7 @@ public class Krumbs {
     }
 
 
-    public Process launch(String name) {
+    public Process launch(String name, String config) {
 
 
         Process process = new Process();
@@ -58,13 +58,18 @@ public class Krumbs {
             process.StartInfo.FileName = "notepad.exe";
         } else {
             //process = Process.Start($"{WOW_PATH}\\WoW.exe");
-            process.StartInfo.FileName = $"{WOW_PATH}\\WoW.exe";
-            process.StartInfo.Arguments = "-config Potato.WTF";
+            process.StartInfo.FileName = $"{WOW_PATH}\\Wow.exe";
+            process.StartInfo.Arguments = $"-config {config}.WTF";
+            //process.StartInfo.Arguments = "-config krumbs.WTF";
             
         }
         process.Start();
 
+        Console.WriteLine($"Strated");
         process.WaitForInputIdle();
+        Thread.Sleep(2000); // is idle immediately, just hack a workaround
+        
+        Console.WriteLine($"Idle");
 
         SetWindowText(process.MainWindowHandle, name); //sets the caption
 
