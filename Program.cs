@@ -9,7 +9,9 @@ namespace krumbs
 
         static void Main(string[] args)
         {
-            new Program().launchBank();
+            // new Program().launchBank();
+            // new Program().launchDual();
+            new Program().launchBox();
         }
 
         public void launchBank() {
@@ -17,6 +19,16 @@ namespace krumbs
             var process = krumbs.launch("WoW - Bank", "bank");
             // krumbs.position(process, screenW / 4 * 3, screenH / 4 * 0, screenW / 4, screenH / 4);
             krumbs.position(process, screenW - (1920 * 2/3), 0 , 1920 * 2/3, 1080 * 2/3);
+        }
+        public void launchDual() {
+            var krumbs = new Krumbs();
+            var process = krumbs.launch("WoW - 1", "krumbs");
+            // krumbs.position(process, screenW / 4 * 3, screenH / 4 * 0, screenW / 4, screenH / 4);
+            krumbs.position(process, 0, 0 , screenW * 2/3, screenH);
+
+            var process2 = krumbs.launch("WoW - 2", "krumbs1");
+            // krumbs.position(process, screenW / 4 * 3, screenH / 4 * 0, screenW / 4, screenH / 4);
+            krumbs.position(process2, screenW - (1920 * 2/3), 0 , 1920 * 2/3, 1080 * 2/3);
         }
 
         public void launchBox() {
